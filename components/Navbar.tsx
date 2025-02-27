@@ -49,12 +49,6 @@ export default function Navbar() {
               >
                 How It Works
               </Link>
-              <Link
-                href="/resources"
-                className="text-sm text-zinc-400 hover:text-white transition-colors"
-              >
-                Resources
-              </Link>
             </div>
 
             {/* Emergency Button */}
