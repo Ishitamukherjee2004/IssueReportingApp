@@ -54,7 +54,7 @@ export default function Navbar() {
             {/* Emergency Button */}
             <div className="flex items-center space-x-4">
               <Link
-                href="/contact"
+                href="/contact-page"
                 className="hidden md:block text-sm text-zinc-400 hover:text-white transition-colors"
               >
                 Contact
