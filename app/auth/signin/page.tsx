@@ -3,6 +3,8 @@
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 
 export default function SignIn() {
   const router = useRouter();
@@ -10,8 +12,17 @@ export default function SignIn() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
+  if (!mounted) {
+    return null;
+  }
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log("Submitting form with:", email, password); // Debugging
     e.preventDefault();
     setIsLoading(true);
     setError("");
@@ -22,17 +33,20 @@ export default function SignIn() {
         password,
         redirect: false,
       });
-
-      if (result?.error) {
-        setError("Invalid credentials");
+    
+      console.log(" Signin result:", result);
+    
+      if (!result || result.error) {
+        setError("Invalid email or password");
       } else {
         router.push("/dashboard");
       }
     } catch (error) {
-      setError("An error occurred during sign in");
-    } finally {
+      setError("An error occurred during sign-in");
+    }finally{
       setIsLoading(false);
     }
+    
   };
 
   return (
