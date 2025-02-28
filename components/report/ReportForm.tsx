@@ -157,7 +157,7 @@ export function ReportForm({ onComplete }: ReportFormProps) {
             </svg>
             <span className="font-medium text-red-500">Cyber-crime</span>
             <span className="text-xs text-zinc-400">
-              Immediate Response Required
+              Online offences , fraud , cyber threats.
             </span>
           </div>
         </button>
@@ -188,7 +188,7 @@ export function ReportForm({ onComplete }: ReportFormProps) {
               />
             </svg>
             <span className="font-medium text-orange-500">Non-Cyber-crime</span>
-            <span className="text-xs text-zinc-400">General Report</span>
+            <span className="text-xs text-zinc-400">Physical harm, violence, abuse.</span>
           </div>
         </button>
       </div>
